@@ -79,9 +79,9 @@ public class Creature : MonoBehaviour
                 moveTimer.Start();
             }
         }
-        UnityEngine.Debug.LogError("nearPlayer:" + nearPlayer.ToString() + " cageTooFar:" + cageTooFar.ToString() + 
-                                   "cageTooClose:" + cageTooClose.ToString() + "doneMoving:" + doneMoving.ToString() +
-                                   "divineEffect:" + divineEffect.ToString());
+        UnityEngine.Debug.LogError("nearPlayer:" + nearPlayer.ToString() + "\ncageTooFar:" + cageTooFar.ToString() + 
+                                   "\ncageTooClose:" + cageTooClose.ToString() + "\ndoneMoving:" + doneMoving.ToString() +
+                                   "\ndivineEffect:" + divineEffect.ToString());
     }
 
     private void setMoveDirection()
@@ -98,12 +98,12 @@ public class Creature : MonoBehaviour
         }
         else if (cageTooClose)
         {
-            moveDirection += cageToCreature;
+            moveDirection = cageToCreature;
             moveDirection.Normalize();
         }
         else if (cageTooFar)
         {
-            moveDirection -= cageToCreature;
+            moveDirection = cageToCreature;
             moveDirection.Normalize();
         }
         else if (doneMoving)
