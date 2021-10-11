@@ -147,25 +147,29 @@ public class Creature : MonoBehaviour
 
     public void Clap()
     {
-        if(!divineEffect && divineEffectTimer.ElapsedMilliseconds / 1000 >= divineEffectCooldown)
-        {
-            divineEffect = true;
-            moveTimer.Stop();
-            divineEffectTimer.Restart();
-            divineEffectTime = clapTime;
-            divineEffectDirection = (player.GetLocation() - gameObject.transform.position).normalized;
-        }
+        Vector3 distance = Vector3.Distance(player.GetLocation(), gameObject.transform.position);
+        bool inCooldown = !divineEffect && divineEffectTimer.ElapsedMilliseconds / 1000 <= divineEffectCooldown;
+        if(divineEffect || inCooldown || distance >= clapDistance)
+            return;
+           
+        divineEffect = true;
+        moveTimer.Stop();
+        divineEffectTimer.Restart();
+        divineEffectTime = clapTime;
+        divineEffectDirection = (player.GetLocation() - gameObject.transform.position).normalized;
     }
 
     public void Lure()
     {
-        if(!divineEffect && divineEffectTimer.ElapsedMilliseconds / 1000 >= divineEffectCooldown)
-        {
-            divineEffect = true;
-            moveTimer.Stop();
-            divineEffectTimer.Restart();
-            divineEffectTime = lureTime;
-            divineEffectDirection = (gameObject.transform.position - player.GetLocation()).normalized;
-        }
+        Vector3 distance = Vector3.Distance(player.GetLocation(), gameObject.transform.position);
+        bool inCooldown = !divineEffect && divineEffectTimer.ElapsedMilliseconds / 1000 <= divineEffectCooldown;
+        if(divineEffect || inCooldown || distance >= lureDistance)
+            return;
+           
+        divineEffect = true;
+        moveTimer.Stop();
+        divineEffectTimer.Restart();
+        divineEffectTime = lureTime;
+        divineEffectDirection = (gameObject.transform.position - player.GetLocation()).normalized;
     }
 }
