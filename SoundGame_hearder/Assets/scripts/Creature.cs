@@ -129,8 +129,8 @@ public class Creature : MonoBehaviour
         else if (doneMoving)
         {
             doneMoving = false;
-            bool negativeX = random.Next(0, 2) <= 1;
-            bool negativeZ = random.Next(0, 2) <= 1;
+            bool negativeX = random.Next(0, 2) < 1;
+            bool negativeZ = random.Next(0, 2) < 1;
 
             float moveX = (float)random.NextDouble();
             float moveZ = (float)random.NextDouble();
