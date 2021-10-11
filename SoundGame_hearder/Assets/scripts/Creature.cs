@@ -89,11 +89,11 @@ public class Creature : MonoBehaviour
         }
         else if (cageTooFar)
         {
-            UnityEngine.Debug.Log("tooClose");
+            UnityEngine.Debug.Log("tooFar");
         }
         else if (cageTooClose)
         {
-            UnityEngine.Debug.Log("tooFar");
+            UnityEngine.Debug.Log("tooClose");
         }
         else if (doneMoving)
         {
