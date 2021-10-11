@@ -147,7 +147,7 @@ public class Creature : MonoBehaviour
 
     public void Clap()
     {
-        Vector3 distance = Vector3.Distance(player.GetLocation(), gameObject.transform.position);
+        float distance = Vector3.Distance(player.GetLocation(), gameObject.transform.position);
         bool inCooldown = !divineEffect && divineEffectTimer.ElapsedMilliseconds / 1000 <= divineEffectCooldown;
         if(divineEffect || inCooldown || distance >= clapDistance)
             return;
@@ -161,7 +161,7 @@ public class Creature : MonoBehaviour
 
     public void Lure()
     {
-        Vector3 distance = Vector3.Distance(player.GetLocation(), gameObject.transform.position);
+        float distance = Vector3.Distance(player.GetLocation(), gameObject.transform.position);
         bool inCooldown = !divineEffect && divineEffectTimer.ElapsedMilliseconds / 1000 <= divineEffectCooldown;
         if(divineEffect || inCooldown || distance >= lureDistance)
             return;
