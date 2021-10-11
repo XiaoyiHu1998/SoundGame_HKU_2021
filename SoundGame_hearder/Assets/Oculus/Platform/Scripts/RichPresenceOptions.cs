@@ -19,17 +19,6 @@ namespace Oculus.Platform
       CAPI.ovr_RichPresenceOptions_SetApiName(Handle, value);
     }
 
-    /// DEPRECATED: Unused
-    [Obsolete("Deprecated")]
-    public void SetArgs(string key, string value) {
-      CAPI.ovr_RichPresenceOptions_SetArgsString(Handle, key, value);
-    }
-
-    [Obsolete("Deprecated")]
-    public void ClearArgs() {
-      CAPI.ovr_RichPresenceOptions_ClearArgs(Handle);
-    }
-
     /// The current amount of users that have joined this user's
     /// squad/team/game/match etc.
     public void SetCurrentCapacity(uint value) {
@@ -52,7 +41,8 @@ namespace Oculus.Platform
     }
 
     /// Users reported with the same instance ID will be considered to be together
-    /// and could interact with each other
+    /// and could interact with each other. Renamed to
+    /// RichPresenceOptions.SetInstanceId()
     public void SetInstanceId(string value) {
       CAPI.ovr_RichPresenceOptions_SetInstanceId(Handle, value);
     }
@@ -62,15 +52,13 @@ namespace Oculus.Platform
       CAPI.ovr_RichPresenceOptions_SetIsIdle(Handle, value);
     }
 
-    /// Set whether or not the person is shown as joinable or not to others
+    /// Set whether or not the person is shown as joinable or not to others. A user
+    /// that is joinable can invite others to join them. Set this to false if other
+    /// users would not be able to join this user. For example: the current session
+    /// is full, or only the host can invite others and the current user is not the
+    /// host.
     public void SetIsJoinable(bool value) {
       CAPI.ovr_RichPresenceOptions_SetIsJoinable(Handle, value);
-    }
-
-    /// DEPRECATED: unused
-    [Obsolete("Deprecated")]
-    public void SetJoinableId(string value) {
-      CAPI.ovr_RichPresenceOptions_SetJoinableId(Handle, value);
     }
 
     /// The maximum that can join this user
