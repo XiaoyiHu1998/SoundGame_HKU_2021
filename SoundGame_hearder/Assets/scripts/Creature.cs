@@ -88,6 +88,9 @@ public class Creature : MonoBehaviour
     {
         Vector3 creatureToPlayer = (gameObject.transform.position - player.GetLocation()).normalized;
         Vector3 creatureToCage = (gameObject.transform.position - cage.GetLocation()).normalized;
+        creatureToPlayer.y = 0;
+        creatureToCage.y = 0;
+
         if (divineEffect)
         {
             return;
