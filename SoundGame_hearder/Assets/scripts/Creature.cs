@@ -54,9 +54,12 @@ public class Creature : MonoBehaviour
         cageTooFar = false;
         divineEffect = false;
     }
+    private void Update()
+    {
+        
+    }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         checkState();
         setMoveDirection();
