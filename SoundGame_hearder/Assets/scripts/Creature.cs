@@ -128,7 +128,7 @@ public class Creature : MonoBehaviour
 
             Vector3 moveDirectionNew = new Vector3(moveX, 0, moveZ).normalized;
             if (moveDirectionNew == moveDirection)
-                UnityEngine.Debug.LogError("same random direction");
+                UnityEngine.Debug.LogException(new System.Exception("same movement direction"));
 
             moveTime = (float)(minMoveTime + random.NextDouble() * (maxMoveTime - minMoveTime));
             moveTimer.Restart();
