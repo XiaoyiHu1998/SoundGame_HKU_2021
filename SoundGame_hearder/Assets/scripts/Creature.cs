@@ -86,24 +86,24 @@ public class Creature : MonoBehaviour
 
     private void setMoveDirection()
     {
-        Vector3 playerToCreature = (player.GetLocation() - gameObject.transform.position).normalized;
-        Vector3 cageToCreature = (cage.GetLocation() - gameObject.transform.position).normalized;
+        Vector3 creatureToPlayer = (gameObject.transform.position - player.GetLocation()).normalized;
+        Vector3 creatureToCage = (gameObject.transform.position - cage.GetLocation()).normalized;
         if (divineEffect)
         {
             return;
         }
         else if (nearPlayer)
         {
-            moveDirection = playerToCreature;
+            moveDirection = creatureToPlayer;
         }
         else if (cageTooClose)
         {
-            moveDirection = -1 * cageToCreature;
+            moveDirection = creatureToCage;
             moveDirection.Normalize();
         }
         else if (cageTooFar)
         {
-            moveDirection = cageToCreature;
+            moveDirection = -1 * creatureToCage;
             moveDirection.Normalize();
         }
         else if (doneMoving)
