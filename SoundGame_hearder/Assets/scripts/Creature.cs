@@ -79,6 +79,9 @@ public class Creature : MonoBehaviour
                 moveTimer.Start();
             }
         }
+        UnityEngine.Debug.LogError("nearPlayer:" + nearPlayer.ToString() + " cageTooFar:" + cageTooFar.ToString() + 
+                                   "cageTooClose:" + cageTooClose.ToString() + "doneMoving:" + doneMoving.ToString() +
+                                   "divineEffect:" + divineEffect.ToString());
     }
 
     private void setMoveDirection()
