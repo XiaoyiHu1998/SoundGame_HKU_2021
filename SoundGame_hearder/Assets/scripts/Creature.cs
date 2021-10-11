@@ -103,7 +103,7 @@ public class Creature : MonoBehaviour
         }
         else if (cageTooFar)
         {
-            moveDirection = cageToCreature;
+            moveDirection = -1 * cageToCreature;
             moveDirection.Normalize();
         }
         else if (doneMoving)
