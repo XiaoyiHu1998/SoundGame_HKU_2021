@@ -144,6 +144,8 @@ public class Creature : MonoBehaviour
             if (moveDirectionNew == moveDirection)
                 UnityEngine.Debug.LogException(new System.Exception("same movement direction"));
 
+            moveDirection = moveDirectionNew;
+
             moveTime = (float)(minMoveTime + random.NextDouble() * (maxMoveTime - minMoveTime));
             moveTimer.Restart();
         }
