@@ -8,6 +8,7 @@ public class Creature : MonoBehaviour
     public Player player;
     public Center center;
     public ScoreManager scoreManager;
+    public int seed;
     public float minMoveTime;
     public float maxMoveTime;
     public float minSoundTime;
@@ -48,7 +49,7 @@ public class Creature : MonoBehaviour
         moveTimer = new Stopwatch();
         moveTimer.Start();
         divineEffectTimer = new Stopwatch();
-        random = new System.Random();
+        random = new System.Random(seed);
         doneMoving = true;
         nearPlayer = false;
         cageTooClose = false;
@@ -131,7 +132,7 @@ public class Creature : MonoBehaviour
         {
             doneMoving = false;
 
-            moveDirection = randomDirection();
+            moveDirection = randomDirection(true);
 
             moveTime = (float)(minMoveTime + random.NextDouble() * (maxMoveTime - minMoveTime));
             moveTimer.Restart();
@@ -187,7 +188,7 @@ public class Creature : MonoBehaviour
         divineEffectDirection = (gameObject.transform.position - player.GetLocation()).normalized;
     }
 
-    private Vector3 randomDirection()
+    private Vector3 randomDirection(bool canBeZero)
     {
 
         bool negativeX = random.Next(0, 2) < 1;
@@ -201,13 +202,22 @@ public class Creature : MonoBehaviour
         if (negativeZ)
             moveZ *= -1f;
 
+        if (canBeZero)
+        {
+            int randomResult = random.Next(0, 101);
+            if (randomResult <= 50 && randomResult % 2 == 0)
+            {
+                return new Vector3(0, 0, 0);
+            }
+        }
+
         return new Vector3(moveX, 0, moveZ).normalized;
     }
 
     private void respawn()
     {
         float distanceFromCenter = (float)(minCageDistance + (maxCageDistance - minCageDistance) * random.NextDouble());
-        gameObject.transform.position = center.GetLocation() + randomDirection() * distanceFromCenter;
+        gameObject.transform.position = center.GetLocation() + randomDirection(false) * distanceFromCenter;
     }
 
     private void OnTriggerEnter(Collider other)
