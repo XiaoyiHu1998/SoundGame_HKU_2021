@@ -6,7 +6,8 @@ using UnityEngine;
 public class Creature : MonoBehaviour
 {
     public Player player;
-    public Cage cage;
+    public Center center;
+    public ScoreManager scoreManager;
     public float minMoveTime;
     public float maxMoveTime;
     public float minSoundTime;
@@ -69,8 +70,8 @@ public class Creature : MonoBehaviour
     private void checkState()
     {
         nearPlayer = Vector3.Distance(player.GetLocation(), gameObject.transform.position) <= runFromPlayerDistance;
-        cageTooFar = Vector3.Distance(cage.GetLocation(), gameObject.transform.position) >= maxCageDistance;
-        cageTooClose = Vector3.Distance(cage.GetLocation(), gameObject.transform.position) <= minCageDistance;
+        cageTooFar = Vector3.Distance(center.GetLocation(), gameObject.transform.position) >= maxCageDistance;
+        cageTooClose = Vector3.Distance(center.GetLocation(), gameObject.transform.position) <= minCageDistance;
         doneMoving = moveTimer.ElapsedMilliseconds / 1000 >= moveTime;
 
         if (divineEffect)
@@ -104,7 +105,7 @@ public class Creature : MonoBehaviour
     private void setMoveDirection()
     {
         Vector3 creatureToPlayer = (gameObject.transform.position - player.GetLocation()).normalized;
-        Vector3 creatureToCage = (gameObject.transform.position - cage.GetLocation()).normalized;
+        Vector3 creatureToCage = (gameObject.transform.position - center.GetLocation()).normalized;
         creatureToPlayer.y = 0;
         creatureToCage.y = 0;
 
@@ -129,22 +130,8 @@ public class Creature : MonoBehaviour
         else if (doneMoving)
         {
             doneMoving = false;
-            bool negativeX = random.Next(0, 2) < 1;
-            bool negativeZ = random.Next(0, 2) < 1;
 
-            float moveX = (float)random.NextDouble();
-            float moveZ = (float)random.NextDouble();
-
-            if (negativeX)
-                moveX *= -1f;
-            if (negativeZ)
-                moveZ *= -1f;
-
-            Vector3 moveDirectionNew = new Vector3(moveX, 0, moveZ).normalized;
-            if (moveDirectionNew == moveDirection)
-                UnityEngine.Debug.LogException(new System.Exception("same movement direction"));
-
-            moveDirection = moveDirectionNew;
+            moveDirection = randomDirection();
 
             moveTime = (float)(minMoveTime + random.NextDouble() * (maxMoveTime - minMoveTime));
             moveTimer.Restart();
@@ -198,5 +185,37 @@ public class Creature : MonoBehaviour
         divineEffectTimer.Restart();
         divineEffectTime = lureTime;
         divineEffectDirection = (gameObject.transform.position - player.GetLocation()).normalized;
+    }
+
+    private Vector3 randomDirection()
+    {
+
+        bool negativeX = random.Next(0, 2) < 1;
+        bool negativeZ = random.Next(0, 2) < 1;
+
+        float moveX = (float)random.NextDouble();
+        float moveZ = (float)random.NextDouble();
+
+        if (negativeX)
+            moveX *= -1f;
+        if (negativeZ)
+            moveZ *= -1f;
+
+        return new Vector3(moveX, 0, moveZ).normalized;
+    }
+
+    private void respawn()
+    {
+        float distanceFromCenter = (float)(minCageDistance + (maxCageDistance - minCageDistance) * random.NextDouble());
+        gameObject.transform.position = center.GetLocation() + randomDirection() * distanceFromCenter;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "cage")
+        {
+            scoreManager.incrementScore(1);
+        }
+        respawn();
     }
 }
