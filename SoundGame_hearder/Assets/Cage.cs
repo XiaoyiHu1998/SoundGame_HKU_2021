@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Cage : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float creatureRunDistance;
+    public float minCageDistance;
     void Start()
     {
         
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public Vector3 GetLocation()
@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
         return gameObject.transform.position;
     }
 
-    public float GetCreatureRunDistance()
+    public float GetMinCageDistance()
     {
-        return creatureRunDistance;
+        return minCageDistance;
     }
 }

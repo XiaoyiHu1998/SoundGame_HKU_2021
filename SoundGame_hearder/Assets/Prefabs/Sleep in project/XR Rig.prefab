@@ -825,6 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c64cbb438f03b43a8d8e04dfaec1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureRunDistance: 0
 --- !u!1 &911827536687871451
 GameObject:
   m_ObjectHideFlags: 0
