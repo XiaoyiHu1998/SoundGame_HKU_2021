@@ -6,15 +6,15 @@ using UnityEngine;
 public class Creature : MonoBehaviour
 {
     public Player player;
+    public Center center;
     public Cage cage;
+    public ScoreManager scoreManager;
+    public int seed;
     public float minMoveTime;
     public float maxMoveTime;
     public float minSoundTime;
     public float maxSoundTime;
-    public float minCageDistance;
-    public float maxCageDistance;
-    public float runFromPlayerDistance;
-
+    
     public float clapDistance;
     public float clapTime;
     public float lureDistance;
@@ -24,12 +24,14 @@ public class Creature : MonoBehaviour
     public float runSpeed;
 
     public float divineEffectCooldown;
+    private float minCageDistance;
+    private float maxCenterDistance;
+    private float runFromPlayerDistance;
 
     private bool doneMoving;
     private bool nearPlayer;
     private bool cageTooClose;
-    private bool cageTooFar;
-
+    private bool centerTooFar;
 
     private Stopwatch moveTimer;
     private System.Random random;
@@ -47,12 +49,16 @@ public class Creature : MonoBehaviour
         moveTimer = new Stopwatch();
         moveTimer.Start();
         divineEffectTimer = new Stopwatch();
-        random = new System.Random();
+        random = new System.Random(seed);
         doneMoving = true;
         nearPlayer = false;
         cageTooClose = false;
-        cageTooFar = false;
+        centerTooFar = false;
         divineEffect = false;
+
+        maxCenterDistance = center.GetMaxCageDistance();
+        minCageDistance = cage.GetMinCageDistance();
+        runFromPlayerDistance = player.GetCreatureRunDistance();
     }
     private void Update()
     {
@@ -69,7 +75,7 @@ public class Creature : MonoBehaviour
     private void checkState()
     {
         nearPlayer = Vector3.Distance(player.GetLocation(), gameObject.transform.position) <= runFromPlayerDistance;
-        cageTooFar = Vector3.Distance(cage.GetLocation(), gameObject.transform.position) >= maxCageDistance;
+        centerTooFar = Vector3.Distance(center.GetLocation(), gameObject.transform.position) >= maxCenterDistance;
         cageTooClose = Vector3.Distance(cage.GetLocation(), gameObject.transform.position) <= minCageDistance;
         doneMoving = moveTimer.ElapsedMilliseconds / 1000 >= moveTime;
 
@@ -87,7 +93,7 @@ public class Creature : MonoBehaviour
         {
             UnityEngine.Debug.Log("nearPlayer");
         }
-        else if (cageTooFar)
+        else if (centerTooFar)
         {
             UnityEngine.Debug.Log("tooFar");
         }
@@ -104,8 +110,10 @@ public class Creature : MonoBehaviour
     private void setMoveDirection()
     {
         Vector3 creatureToPlayer = (gameObject.transform.position - player.GetLocation()).normalized;
-        Vector3 creatureToCage = (gameObject.transform.position - cage.GetLocation()).normalized;
+        Vector3 creatureToCenter = (gameObject.transform.position - center.GetLocation()).normalized;
+        Vector3 creatureToCage   = (gameObject.transform.position - cage.GetLocation()).normalized;
         creatureToPlayer.y = 0;
+        creatureToCenter.y = 0;
         creatureToCage.y = 0;
 
         if (divineEffect)
@@ -121,30 +129,16 @@ public class Creature : MonoBehaviour
             moveDirection = creatureToCage;
             moveDirection.Normalize();
         }
-        else if (cageTooFar)
+        else if (centerTooFar)
         {
-            moveDirection = -1 * creatureToCage;
+            moveDirection = -1 * creatureToCenter;
             moveDirection.Normalize();
         }
         else if (doneMoving)
         {
             doneMoving = false;
-            bool negativeX = random.Next(0, 2) < 1;
-            bool negativeZ = random.Next(0, 2) < 1;
 
-            float moveX = (float)random.NextDouble();
-            float moveZ = (float)random.NextDouble();
-
-            if (negativeX)
-                moveX *= -1f;
-            if (negativeZ)
-                moveZ *= -1f;
-
-            Vector3 moveDirectionNew = new Vector3(moveX, 0, moveZ).normalized;
-            if (moveDirectionNew == moveDirection)
-                UnityEngine.Debug.LogException(new System.Exception("same movement direction"));
-
-            moveDirection = moveDirectionNew;
+            moveDirection = randomDirection();
 
             moveTime = (float)(minMoveTime + random.NextDouble() * (maxMoveTime - minMoveTime));
             moveTimer.Restart();
@@ -198,5 +192,50 @@ public class Creature : MonoBehaviour
         divineEffectTimer.Restart();
         divineEffectTime = lureTime;
         divineEffectDirection = (gameObject.transform.position - player.GetLocation()).normalized;
+    }
+
+    private Vector3 randomDirection()
+    {
+
+        bool negativeX = random.Next(0, 2) < 1;
+        bool negativeZ = random.Next(0, 2) < 1;
+
+        float moveX = (float)random.NextDouble();
+        float moveZ = (float)random.NextDouble();
+
+        if (negativeX)
+            moveX *= -1f;
+        if (negativeZ)
+            moveZ *= -1f;
+
+        int randomResult = random.Next(0, 101);
+        if (randomResult <= 50 && randomResult % 2 == 0)
+        {
+            return new Vector3(0, 0, 0);
+        }
+
+        return new Vector3(moveX, 0, moveZ).normalized;
+    }
+
+    private void respawn()
+    {
+        float distanceFromCenter = (float)(maxCenterDistance * random.NextDouble());
+        Vector3 respawnLocation = center.GetLocation() + randomDirection() * distanceFromCenter;
+
+        while(Vector3.Distance(respawnLocation, cage.GetLocation()) <= minCageDistance * 1.5f)
+        {
+            respawnLocation = center.GetLocation() + randomDirection() * distanceFromCenter;
+        }
+
+        gameObject.transform.position = respawnLocation;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "cage")
+        {
+            scoreManager.incrementScore(1);
+        }
+        respawn();
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cage : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float minCageDistance;
     void Start()
     {
         
@@ -19,5 +20,10 @@ public class Cage : MonoBehaviour
     public Vector3 GetLocation()
     {
         return gameObject.transform.position;
+    }
+
+    public float GetMinCageDistance()
+    {
+        return minCageDistance;
     }
 }
