@@ -158,15 +158,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 768577207}
   center: {fileID: 1225111972}
+  cage: {fileID: 1399618875}
   scoreManager: {fileID: 547732539}
   seed: 23812789
   minMoveTime: 3
   maxMoveTime: 10
   minSoundTime: 0
   maxSoundTime: 0
-  minCageDistance: 1
-  maxCageDistance: 30
-  runFromPlayerDistance: 2.5
   clapDistance: 2.5
   clapTime: 3
   lureDistance: 2.5
@@ -243,12 +241,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237512921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.16, y: 0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 2051791089}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &237512927
 AudioSource:
@@ -477,15 +475,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 768577207}
   center: {fileID: 1225111972}
+  cage: {fileID: 1399618875}
   scoreManager: {fileID: 547732539}
   seed: 1231234
   minMoveTime: 3
   maxMoveTime: 10
   minSoundTime: 0
   maxSoundTime: 0
-  minCageDistance: 1
-  maxCageDistance: 30
-  runFromPlayerDistance: 2.5
   clapDistance: 2.5
   clapTime: 3
   lureDistance: 2.5
@@ -562,12 +558,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343023665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.77, y: 0.37, z: 15.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 2051791089}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547732538
 GameObject:
@@ -610,7 +606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &600436734
 PrefabInstance:
@@ -625,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3766874537293486430, guid: 4557b2e5adbbd5d4686c5779e1a3688b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3766874537293486430, guid: 4557b2e5adbbd5d4686c5779e1a3688b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,15 +641,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3766874537293486430, guid: 4557b2e5adbbd5d4686c5779e1a3688b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3766874537293486430, guid: 4557b2e5adbbd5d4686c5779e1a3688b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3766874537293486430, guid: 4557b2e5adbbd5d4686c5779e1a3688b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3766874537293486430, guid: 4557b2e5adbbd5d4686c5779e1a3688b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -896,15 +892,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 768577207}
   center: {fileID: 1225111972}
+  cage: {fileID: 1399618875}
   scoreManager: {fileID: 547732539}
   seed: 278349
   minMoveTime: 3
   maxMoveTime: 10
   minSoundTime: 0
   maxSoundTime: 0
-  minCageDistance: 1
-  maxCageDistance: 30
-  runFromPlayerDistance: 2.5
   clapDistance: 2.5
   clapTime: 3
   lureDistance: 2.5
@@ -981,12 +975,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701256192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 19.9, y: 0.37, z: 8.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 2051791089}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1113,6 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c64cbb438f03b43a8d8e04dfaec1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureRunDistance: 0
 --- !u!136 &768577208
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1321,15 +1316,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 768577207}
   center: {fileID: 1225111972}
+  cage: {fileID: 1399618875}
   scoreManager: {fileID: 547732539}
   seed: 2147483647
   minMoveTime: 3
   maxMoveTime: 10
   minSoundTime: 0
   maxSoundTime: 0
-  minCageDistance: 1
-  maxCageDistance: 30
-  runFromPlayerDistance: 2.5
   clapDistance: 2.5
   clapTime: 3
   lureDistance: 2.5
@@ -1406,12 +1399,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907416848}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 19.9, y: 0.37, z: 8.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 2051791089}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993471225
 GameObject:
@@ -1544,15 +1537,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 768577207}
   center: {fileID: 1225111972}
+  cage: {fileID: 1399618875}
   scoreManager: {fileID: 547732539}
   seed: 12312
   minMoveTime: 3
   maxMoveTime: 10
   minSoundTime: 0
   maxSoundTime: 0
-  minCageDistance: 1
-  maxCageDistance: 30
-  runFromPlayerDistance: 2.5
   clapDistance: 2.5
   clapTime: 3
   lureDistance: 2.5
@@ -1629,12 +1620,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993471225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15.57, y: 0.37, z: -10.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 2051791089}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &995888700 stripped
 Transform:
@@ -1674,6 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5978d3072424c3a4eacde955bba157b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCageDistance: 40
 --- !u!65 &1225111973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1867,6 +1859,7 @@ GameObject:
   - component: {fileID: 1399618873}
   - component: {fileID: 1399618872}
   - component: {fileID: 1399618871}
+  - component: {fileID: 1399618875}
   m_Layer: 0
   m_Name: Cage
   m_TagString: cage
@@ -1945,12 +1938,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399618870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.37, y: 0, z: -14.98}
+  m_LocalPosition: {x: 4.3, y: 0, z: -7}
   m_LocalScale: {x: 3.5215452, y: 5.3802166, z: 3.5215452}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399618875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399618870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee9e46b4f90b284bb5bde259f661175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCageDistance: 3
 --- !u!1001 &1532507438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1968,7 +1974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5433595081000721460, guid: 1a67c0a9055234a41a739d61a09a8700, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5433595081000721460, guid: 1a67c0a9055234a41a739d61a09a8700, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2025,7 +2031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 911827536658013241, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 911827536658013241, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2045,7 +2051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 911827536658013241, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 911827536658013241, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2053,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 911827536658013241, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 911827536658013241, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2070,6 +2076,10 @@ PrefabInstance:
     - target: {fileID: 911827536658013242, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 911827536658013246, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
+      propertyPath: creatureRunDistance
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e425b78da4b163a4497521ab33d78c68, type: 3}
@@ -2107,15 +2117,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 768577207}
   center: {fileID: 0}
+  cage: {fileID: 0}
   scoreManager: {fileID: 0}
   seed: 0
   minMoveTime: 3
   maxMoveTime: 10
   minSoundTime: 0
   maxSoundTime: 0
-  minCageDistance: 1
-  maxCageDistance: 30
-  runFromPlayerDistance: 2.5
   clapDistance: 2.5
   clapTime: 3
   lureDistance: 2.5
@@ -2197,5 +2205,40 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2051791088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2051791089}
+  m_Layer: 0
+  m_Name: Creatures
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2051791089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051791088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 237512926}
+  - {fileID: 343023671}
+  - {fileID: 993471231}
+  - {fileID: 701256198}
+  - {fileID: 907416854}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
