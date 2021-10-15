@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float creatureRunDistance;
     void Start()
     {
         
@@ -19,5 +20,10 @@ public class Player : MonoBehaviour
     public Vector3 GetLocation()
     {
         return gameObject.transform.position;
+    }
+
+    public float GetCreatureRunDistance()
+    {
+        return creatureRunDistance;
     }
 }

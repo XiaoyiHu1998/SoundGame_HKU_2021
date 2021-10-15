@@ -1,0 +1,74 @@
+{
+    "name": "DevinePowers",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "71c5f044-3520-4698-a5bb-30477c639839",
+            "actions": [
+                {
+                    "name": "Clap",
+                    "type": "Button",
+                    "id": "343a9be9-c56d-48e9-9803-a14becb9e5f9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Rub",
+                    "type": "Button",
+                    "id": "6a66e888-be4f-44e0-a880-3a5d2c71caf0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "feb95ee1-a10a-4f6a-8724-d2746a070813",
+                    "path": "<OculusTouchController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ba47d64-0590-4bc8-850b-fcb48f889c24",
+                    "path": "<OculusTouchController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3006abf-88d1-4a7c-83b1-0852b3ddab9b",
+                    "path": "<OculusTouchController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rub",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4be0f283-2973-4d0b-9ea3-bff90266e95b",
+                    "path": "<OculusTouchController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rub",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
