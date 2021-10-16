@@ -9,6 +9,8 @@ public class Creature : MonoBehaviour
     public Center center;
     public Cage cage;
     public ScoreManager scoreManager;
+    public SoundManager soundManager;
+    public AudioSource audioSource;
     public int seed;
     public float minMoveTime;
     public float maxMoveTime;

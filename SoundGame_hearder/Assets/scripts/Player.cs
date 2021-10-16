@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     public float creatureRunDistance;
+    public SoundManager soundManager;
+    public AudioSource audioSource;
     void Start()
     {
         

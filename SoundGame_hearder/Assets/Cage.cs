@@ -6,6 +6,8 @@ public class Cage : MonoBehaviour
 {
     // Start is called before the first frame update
     public float minCageDistance;
+    public SoundManager soundManager;
+    public AudioSource audioSource;
     void Start()
     {
         
