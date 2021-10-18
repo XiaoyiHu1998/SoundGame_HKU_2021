@@ -11,6 +11,7 @@ public class Creature : MonoBehaviour
     public ScoreManager scoreManager;
     public SoundManager soundManager;
     public AudioSource audioSource;
+    public AudioSource audioSourcePickupDrop;
     public int seed;
     public float minMoveTime;
     public float maxMoveTime;
@@ -257,13 +258,13 @@ public class Creature : MonoBehaviour
     public void Pickup()
     {
         pickedUp = true;
-        audioSource.clip = soundManager.getAudioClip(ClipType.CreaturePickedUp);
-        audioSource.PlayDelayed(0.8f);
+        audioSourcePickupDrop.clip = soundManager.getAudioClip(ClipType.CreaturePickedUp);
+        audioSourcePickupDrop.PlayDelayed(0.5f);
     }
 
     public void Drop()
     {
         pickedUp = false;
-        audioSource.Stop();
+        audioSourcePickupDrop.Stop();
     }
 }
