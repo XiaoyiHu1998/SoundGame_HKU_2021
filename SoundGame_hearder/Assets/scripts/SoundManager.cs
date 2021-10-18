@@ -33,6 +33,7 @@ public class SoundManager : MonoBehaviour
     public List<AudioClip> creatureRun;
     public List<AudioClip> creatureIdle;
     public List<AudioClip> CreaturePickUp;
+    public List<AudioClip> CreaturePickedUp;
     public List<AudioClip> CreatureDropped;
     public List<AudioClip> CreatureCaged;
     public List<AudioClip> CreatureSpawn;
@@ -42,6 +43,7 @@ public class SoundManager : MonoBehaviour
     private Queue<int> creatureRunQueue;
     private Queue<int> creatureIdleQueue;
     private Queue<int> CreaturePickUpQueue;
+    private Queue<int> CreaturePickedUpQueue;
     private Queue<int> CreatureDroppedQueue;
     private Queue<int> CreatureCagedQueue;
     private Queue<int> CreatureSpawnQueue;
@@ -63,7 +65,8 @@ public class SoundManager : MonoBehaviour
         creatureRunQueue     = new Queue<int>();
         creatureIdleQueue    = new Queue<int>();
         playerWalkQueue      = new Queue<int>();
-        CreaturePickUpQueue  = new Queue<int>();
+        CreaturePickUpQueue = new Queue<int>();
+        CreaturePickedUpQueue = new Queue<int>();
         CreatureDroppedQueue = new Queue<int>();
         CreatureCagedQueue   = new Queue<int>();
         CreatureSpawnQueue   = new Queue<int>();
@@ -91,6 +94,12 @@ public class SoundManager : MonoBehaviour
                 return creatureWalk[getRandomClip(ref creatureWalk, ref creatureWalkQueue)];
             case ClipType.CreatureRun:
                 return creatureRun[getRandomClip(ref creatureRun, ref creatureRunQueue)];
+            case ClipType.CreaturePickUp:
+                return CreaturePickUp[getRandomClip(ref CreaturePickUp, ref CreaturePickUpQueue)];
+            case ClipType.CreaturePickedUp:
+                return CreaturePickedUp[getRandomClip(ref CreaturePickedUp, ref CreaturePickedUpQueue)];
+            case ClipType.CreatureDropped:
+                return CreatureDropped[getRandomClip(ref CreatureDropped, ref CreatureDroppedQueue)];
             case ClipType.PlayerWalk:
                 return playerWalk[getRandomClip(ref playerWalk, ref playerWalkQueue)];
             default:
