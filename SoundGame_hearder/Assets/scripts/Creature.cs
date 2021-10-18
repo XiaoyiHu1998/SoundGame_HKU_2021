@@ -22,6 +22,7 @@ public class Creature : MonoBehaviour
     public float clapTime;
     public float lureDistance;
     public float lureTime;
+    public float respawnTime;
 
     public float moveSpeed;
     public float runSpeed;
@@ -37,6 +38,7 @@ public class Creature : MonoBehaviour
     private bool cageTooClose;
     private bool centerTooFar;
 
+    private Stopwatch respawnTimer;
     private Stopwatch moveTimer;
     private System.Random random;
     private Vector3 moveDirection;
@@ -50,6 +52,7 @@ public class Creature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        respawnTimer = new Stopwatch();
         moveTimer = new Stopwatch();
         moveTimer.Start();
         divineEffectTimer = new Stopwatch();
@@ -82,9 +85,17 @@ public class Creature : MonoBehaviour
 
     private void checkRespawn()
     {
-        if(Vector3.Distance(cage.GetLocation(), gameObject.transform.position) <= cage.GetRespawnDistance())
+        if(Vector3.Distance(cage.GetLocation(), gameObject.transform.position) <= cage.GetRespawnDistance() && !respawnTimer.IsRunning)
         {
             scoreManager.incrementScore(1);
+            respawnTimer.Start();
+            PlayClip(soundManager.getAudioClip(ClipType.CreatureCaged));
+        }
+
+        if(respawnTimer.ElapsedMilliseconds >= respawnTime)
+        {
+            respawnTimer.Stop();
+            respawnTimer.Reset();
             respawn();
         }
     }
@@ -247,24 +258,26 @@ public class Creature : MonoBehaviour
 
         respawnLocation.y = 2.2f;
         gameObject.transform.position = respawnLocation;
+        PlayClip(soundManager.getAudioClip(ClipType.CreatureSpawn));
     }
 
-    public void PlayClip(AudioClip audioClip)
+    public void PlayClip(AudioClip audioClip, float delay = 0.0f)
     {
         audioSource.clip = audioClip;
-        audioSource.Play();
+        audioSource.PlayDelayed(delay);
     }
 
     public void Pickup()
     {
         pickedUp = true;
-        audioSourcePickupDrop.clip = soundManager.getAudioClip(ClipType.CreaturePickedUp);
-        audioSourcePickupDrop.PlayDelayed(0.5f);
+        audioSourcePickupDrop.clip = soundManager.getAudioClip(ClipType.CreaturePickUp);
+        audioSourcePickupDrop.Play();
     }
 
     public void Drop()
     {
         pickedUp = false;
-        audioSourcePickupDrop.Stop();
+        audioSourcePickupDrop.clip = soundManager.getAudioClip(ClipType.CreatureDropped);
+        audioSourcePickupDrop.Play();
     }
 }

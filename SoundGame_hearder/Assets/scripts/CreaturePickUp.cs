@@ -45,8 +45,8 @@ public class CreaturePickUp : MonoBehaviour
                     carrying = true;
                     carriedObject = p.gameObject;
                     Creature pickedUpCreature = carriedObject.GetComponent<Creature>();
-                    pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreaturePickUp));
                     pickedUpCreature.Pickup();
+                    pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreaturePickedUp), 0.5f);
                 }
             }
         }
