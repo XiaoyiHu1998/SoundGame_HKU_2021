@@ -1413,12 +1413,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407127060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 27.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 11.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1845109962}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &407127062
 MonoBehaviour:
@@ -1454,9 +1454,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2785,8 +2785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee9e46b4f90b284bb5bde259f661175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCageDistance: 10
-  respawnDistance: 5
+  minCageDistance: 20
+  respawnDistance: 8
   soundManager: {fileID: 1001604760}
   audioSource: {fileID: 1274827347}
 --- !u!136 &1274827349
@@ -2860,8 +2860,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274827346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.6, y: 3.9819, z: 85.2}
-  m_LocalScale: {x: 1.2279552, y: 7.5227766, z: 1.2279552}
+  m_LocalPosition: {x: -33.6, y: 4.1901, z: 85.2}
+  m_LocalScale: {x: 4.0767493, y: 8.141678, z: 4.0767493}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -3633,7 +3633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5978d3072424c3a4eacde955bba157b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCageDistance: 50
+  maxCageDistance: 100
 --- !u!65 &1615969175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4195,6 +4195,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1845109961}
     - target: {fileID: 3758666571489812597, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758666571489812597, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1641133312}
@@ -4329,6 +4333,11 @@ MonoBehaviour:
   creatureRunDistance: 2.5
   soundManager: {fileID: 1001604760}
   audioSource: {fileID: 1845109958}
+--- !u!4 &1845109962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7360982716281970886, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
+  m_PrefabInstance: {fileID: 1655404495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886027882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5043,5 +5052,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
