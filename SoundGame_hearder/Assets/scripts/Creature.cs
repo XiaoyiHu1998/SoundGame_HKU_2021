@@ -69,9 +69,19 @@ public class Creature : MonoBehaviour
 
     void FixedUpdate()
     {
+        checkRespawn();
         checkState();
         setMoveDirection();
         Move();
+    }
+
+    private void checkRespawn()
+    {
+        if(Vector3.Distance(cage.GetLocation(), gameObject.transform.position) <= cage.GetRespawnDistance())
+        {
+            scoreManager.incrementScore(1);
+            respawn();
+        }
     }
 
     private void checkState()
@@ -232,12 +242,12 @@ public class Creature : MonoBehaviour
         gameObject.transform.position = respawnLocation;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "cage")
-        {
-            scoreManager.incrementScore(1);
-        }
-        respawn();
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.tag == "cage")
+    //    {
+    //        scoreManager.incrementScore(1);
+    //    }
+    //    respawn();
+    //}
 }

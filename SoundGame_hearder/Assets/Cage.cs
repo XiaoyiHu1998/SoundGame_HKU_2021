@@ -6,6 +6,7 @@ public class Cage : MonoBehaviour
 {
     // Start is called before the first frame update
     public float minCageDistance;
+    public float respawnDistance;
     public SoundManager soundManager;
     public AudioSource audioSource;
     void Start()
@@ -17,6 +18,11 @@ public class Cage : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public float GetRespawnDistance()
+    {
+        return respawnDistance;
     }
 
     public Vector3 GetLocation()
