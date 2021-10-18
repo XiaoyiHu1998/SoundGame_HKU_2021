@@ -5,6 +5,7 @@ using UnityEngine;
 public class CreaturePickUp : MonoBehaviour
 {
     public Camera mainCamera;
+    public SoundManager soundManager;
     bool carrying;
 
     GameObject carriedObject;
@@ -43,7 +44,9 @@ public class CreaturePickUp : MonoBehaviour
                 if(p != null){
                     carrying = true;
                     carriedObject = p.gameObject;
-                    carriedObject.GetComponent<Creature>().pickedUp = true;
+                    Creature pickedUpCreature = carriedObject.GetComponent<Creature>();
+                    pickedUpCreature.pickedUp = true;
+                    pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreaturePickedUp));
                 }
             }
         }
@@ -58,7 +61,9 @@ public class CreaturePickUp : MonoBehaviour
         carriedObject.transform.parent = null;
         //carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<CapsuleCollider>().enabled = true;
-        carriedObject.GetComponent<Creature>().pickedUp = false;
+        Creature pickedUpCreature = carriedObject.GetComponent<Creature>();
+        pickedUpCreature.pickedUp = false;
+        pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreatureDropped));
         carrying = false;
     }
 }

@@ -246,4 +246,10 @@ public class Creature : MonoBehaviour
         respawnLocation.y = 2.2f;
         gameObject.transform.position = respawnLocation;
     }
+
+    public void PlayClip(AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
 }
