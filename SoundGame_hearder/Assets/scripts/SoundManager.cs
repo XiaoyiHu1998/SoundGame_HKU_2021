@@ -20,29 +20,40 @@ public enum ClipType
 public class SoundManager : MonoBehaviour
 {
     public int maxQueueLength;
-    // Start is called before the first frame update
     public AudioClip errorSound;
     public GodSource godSource;
-    public (List<AudioClip>, Queue<int>) creatureWalk;
-    public (List<AudioClip>, Queue<int>) creatureRun;
-    public (List<AudioClip>, Queue<int>) creatureIdle;
-    public (List<AudioClip>, Queue<int>) playerWalk;
 
-    public (List<AudioClip>, Queue<int>) godIdle;
-    public (List<AudioClip>, Queue<int>) godDrown;
-    public (List<AudioClip>, Queue<int>) godCapture;
+    //audio clips
+    public List<AudioClip> creatureWalk;
+    public List<AudioClip> creatureRun;
+    public List<AudioClip> creatureIdle;
+    public List<AudioClip> playerWalk;
+
+    private Queue<int> creatureWalkQueue;
+    private Queue<int> creatureRunQueue;
+    private Queue<int> creatureIdleQueue;
+    private Queue<int> playerWalkQueue;
+
+    //god voicelines
+    public List<AudioClip> godIdle;
+    public List<AudioClip> godDrown;
+    public List<AudioClip> godCapture;
+
+    private Queue<int> godIdleQueue;
+    private Queue<int> godDrownQueue;
+    private Queue<int> godCaptureQueue;
 
     private System.Random random;
     void Start()
     {
-        creatureWalk = (new List<AudioClip>(), new Queue<int>());
-        creatureRun  = (new List<AudioClip>(), new Queue<int>());
-        creatureIdle = (new List<AudioClip>(), new Queue<int>());
-        playerWalk   = (new List<AudioClip>(), new Queue<int>());
+        creatureWalkQueue = new Queue<int>();
+        creatureRunQueue  = new Queue<int>();
+        creatureIdleQueue = new Queue<int>();
+        playerWalkQueue   = new Queue<int>();
 
-        godIdle     = (new List<AudioClip>(), new Queue<int>());
-        godDrown    = (new List<AudioClip>(), new Queue<int>());
-        godCapture  = (new List<AudioClip>(), new Queue<int>());
+        godIdleQueue     = new Queue<int>();
+        godDrownQueue    = new Queue<int>();
+        godCaptureQueue  = new Queue<int>();
 
         random = new System.Random();
     }
@@ -58,13 +69,13 @@ public class SoundManager : MonoBehaviour
         switch (clipType)
         {
             case ClipType.CreatureIdle:
-                return creatureIdle.Item1[getRandomClip(ref creatureIdle.Item1,  ref creatureIdle.Item2)];
+                return creatureIdle[getRandomClip(ref creatureIdle, ref creatureIdleQueue)];
             case ClipType.CreatureWalk:
-                return creatureWalk.Item1[getRandomClip(ref creatureWalk.Item1, ref creatureWalk.Item2)];
+                return creatureWalk[getRandomClip(ref creatureWalk, ref creatureWalkQueue)];
             case ClipType.CreatureRun:
-                return creatureRun.Item1[getRandomClip(ref creatureRun.Item1, ref creatureRun.Item2)];
+                return creatureRun[getRandomClip(ref creatureRun, ref creatureRunQueue)];
             case ClipType.PlayerWalk:
-                return playerWalk.Item1[getRandomClip(ref playerWalk.Item1, ref playerWalk.Item2)];
+                return playerWalk[getRandomClip(ref playerWalk, ref playerWalkQueue)];
             default:
                 return errorSound;
         }
@@ -75,13 +86,13 @@ public class SoundManager : MonoBehaviour
         switch (godLine)
         {
             case GodLine.GodIdle:
-                godSource.PlayLine(godIdle.Item1[getRandomClip(ref godIdle.Item1, ref godIdle.Item2)]);
+                godSource.PlayLine(godIdle[getRandomClip(ref godIdle, ref godIdleQueue)]);
                 break;
             case GodLine.GodDrown:
-                godSource.PlayLine(godDrown.Item1[getRandomClip(ref godDrown.Item1, ref godDrown.Item2)]);
+                godSource.PlayLine(godDrown[getRandomClip(ref godDrown, ref godDrownQueue)]);
                 break;
             case GodLine.GodCapture:
-                godSource.PlayLine(godCapture.Item1[getRandomClip(ref godCapture.Item1, ref godCapture.Item2)]);
+                godSource.PlayLine(godCapture[getRandomClip(ref godCapture, ref godCaptureQueue)]);
                 break;
         }
     }
