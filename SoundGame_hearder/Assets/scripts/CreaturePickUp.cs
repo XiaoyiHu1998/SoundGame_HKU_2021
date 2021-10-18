@@ -45,8 +45,8 @@ public class CreaturePickUp : MonoBehaviour
                     carrying = true;
                     carriedObject = p.gameObject;
                     Creature pickedUpCreature = carriedObject.GetComponent<Creature>();
-                    pickedUpCreature.pickedUp = true;
-                    pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreaturePickedUp));
+                    pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreaturePickUp));
+                    pickedUpCreature.Pickup();
                 }
             }
         }
@@ -61,9 +61,7 @@ public class CreaturePickUp : MonoBehaviour
         carriedObject.transform.parent = null;
         //carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<CapsuleCollider>().enabled = true;
-        Creature pickedUpCreature = carriedObject.GetComponent<Creature>();
-        pickedUpCreature.pickedUp = false;
-        pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreatureDropped));
+        carriedObject.GetComponent<Creature>().Drop();
         carrying = false;
     }
 }

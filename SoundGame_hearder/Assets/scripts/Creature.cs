@@ -119,6 +119,7 @@ public class Creature : MonoBehaviour
         }
         else if (doneMoving)
         {
+            audioSource.Stop();
             UnityEngine.Debug.Log("doneMoving");
         }
     }
@@ -251,5 +252,18 @@ public class Creature : MonoBehaviour
     {
         audioSource.clip = audioClip;
         audioSource.Play();
+    }
+
+    public void Pickup()
+    {
+        pickedUp = true;
+        audioSource.clip = soundManager.getAudioClip(ClipType.CreaturePickedUp);
+        audioSource.PlayDelayed(0.8f);
+    }
+
+    public void Drop()
+    {
+        pickedUp = false;
+        audioSource.Stop();
     }
 }
