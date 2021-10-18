@@ -14,6 +14,11 @@ public enum ClipType
     CreatureWalk,
     CreatureRun,
     CreatureIdle,
+    CreaturePickUp,
+    CreaturePickedUp,
+    CreatureDropped,
+    CreatureCaged,
+    CreatureSpawn,
     PlayerWalk,
 };
 
@@ -27,11 +32,19 @@ public class SoundManager : MonoBehaviour
     public List<AudioClip> creatureWalk;
     public List<AudioClip> creatureRun;
     public List<AudioClip> creatureIdle;
+    public List<AudioClip> CreaturePickUp;
+    public List<AudioClip> CreatureDropped;
+    public List<AudioClip> CreatureCaged;
+    public List<AudioClip> CreatureSpawn;
     public List<AudioClip> playerWalk;
 
     private Queue<int> creatureWalkQueue;
     private Queue<int> creatureRunQueue;
     private Queue<int> creatureIdleQueue;
+    private Queue<int> CreaturePickUpQueue;
+    private Queue<int> CreatureDroppedQueue;
+    private Queue<int> CreatureCagedQueue;
+    private Queue<int> CreatureSpawnQueue;
     private Queue<int> playerWalkQueue;
 
     //god voicelines
@@ -46,10 +59,14 @@ public class SoundManager : MonoBehaviour
     private System.Random random;
     void Start()
     {
-        creatureWalkQueue = new Queue<int>();
-        creatureRunQueue  = new Queue<int>();
-        creatureIdleQueue = new Queue<int>();
-        playerWalkQueue   = new Queue<int>();
+        creatureWalkQueue    = new Queue<int>();
+        creatureRunQueue     = new Queue<int>();
+        creatureIdleQueue    = new Queue<int>();
+        playerWalkQueue      = new Queue<int>();
+        CreaturePickUpQueue  = new Queue<int>();
+        CreatureDroppedQueue = new Queue<int>();
+        CreatureCagedQueue   = new Queue<int>();
+        CreatureSpawnQueue   = new Queue<int>();
 
         godIdleQueue     = new Queue<int>();
         godDrownQueue    = new Queue<int>();
