@@ -24,6 +24,7 @@ public class Creature : MonoBehaviour
 
     public float moveSpeed;
     public float runSpeed;
+    public bool pickedUp;
 
     public float divineEffectCooldown;
     private float minCageDistance;
@@ -69,6 +70,9 @@ public class Creature : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (pickedUp)
+            return;
+
         checkRespawn();
         checkState();
         setMoveDirection();
@@ -239,15 +243,7 @@ public class Creature : MonoBehaviour
             respawnLocation = center.GetLocation() + randomDirection() * distanceFromCenter;
         }
 
+        respawnLocation.y = 2.2f;
         gameObject.transform.position = respawnLocation;
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.tag == "cage")
-    //    {
-    //        scoreManager.incrementScore(1);
-    //    }
-    //    respawn();
-    //}
 }

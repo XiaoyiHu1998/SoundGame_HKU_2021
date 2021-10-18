@@ -43,6 +43,7 @@ public class CreaturePickUp : MonoBehaviour
                 if(p != null){
                     carrying = true;
                     carriedObject = p.gameObject;
+                    carriedObject.GetComponent<Creature>().pickedUp = true;
                 }
             }
         }
@@ -57,6 +58,7 @@ public class CreaturePickUp : MonoBehaviour
         carriedObject.transform.parent = null;
         //carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<CapsuleCollider>().enabled = true;
+        carriedObject.GetComponent<Creature>().pickedUp = false;
         carrying = false;
     }
 }
