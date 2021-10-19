@@ -9,6 +9,7 @@ public class Cage : MonoBehaviour
     public float respawnDistance;
     public SoundManager soundManager;
     public AudioSource audioSource;
+    public AudioSource audioSourceCaged;
     void Start()
     {
         
@@ -33,5 +34,11 @@ public class Cage : MonoBehaviour
     public float GetMinCageDistance()
     {
         return minCageDistance;
+    }
+
+    public void PlayCagedSound()
+    {
+        audioSourceCaged.clip = soundManager.getAudioClip(ClipType.CreatureCaged);
+        audioSource.Play();
     }
 }
