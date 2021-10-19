@@ -61,7 +61,11 @@ public class CreaturePickUp : MonoBehaviour
         carriedObject.transform.parent = null;
         //carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<CapsuleCollider>().enabled = true;
-        carriedObject.GetComponent<Creature>().Drop();
         carrying = false;
+        playSound();
+    }
+
+    void playSound(){
+        carriedObject.GetComponent<Creature>().Drop();
     }
 }
