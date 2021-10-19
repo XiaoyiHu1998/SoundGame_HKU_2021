@@ -1310,17 +1310,30 @@ MonoBehaviour:
   maxQueueLength: 1
   errorSound: {fileID: 8300000, guid: b85ee0ef0d24a134ab5bd9381b96294b, type: 3}
   godSource: {fileID: 407127062}
-  creatureWalk: []
-  creatureRun: []
-  creatureIdle: []
-  CreaturePickUp: []
-  CreatureDropped: []
-  CreatureCaged: []
-  CreatureSpawn: []
-  playerWalk: []
-  godIdle: []
-  godDrown: []
-  godCapture: []
+  creatureWalk:
+  - {fileID: 8300000, guid: 37c9e69911022452a9ebd4ee732ab036, type: 3}
+  creatureRun:
+  - {fileID: 8300000, guid: 6ddf17459adb0c947bc21b73d1ec1574, type: 3}
+  creatureIdle:
+  - {fileID: 8300000, guid: 60d8ef6795ce98844af504cf0ee1ce04, type: 3}
+  CreaturePickUp:
+  - {fileID: 8300000, guid: 494bd1721199a40c5a79fa3011793556, type: 3}
+  CreaturePickedUp:
+  - {fileID: 8300000, guid: 3a4baf251c1814716b9458d036384a76, type: 3}
+  CreatureDropped:
+  - {fileID: 8300000, guid: 60e6549ea063c7e4897a34fe6c266722, type: 3}
+  CreatureCaged:
+  - {fileID: 8300000, guid: 1ddf75c4b5cd9b9469f634ec80086bef, type: 3}
+  CreatureSpawn:
+  - {fileID: 8300000, guid: cc4358f7b0d2fa2409a84eef73d956f8, type: 3}
+  playerWalk:
+  - {fileID: 8300000, guid: cf81cbb09d9674f46ae0bc9f562caa8c, type: 3}
+  godIdle:
+  - {fileID: 8300000, guid: 0eeb62c206491624a9b20feb5bb757f5, type: 3}
+  godDrown:
+  - {fileID: 8300000, guid: 04a1765d2820c0d4da18097425639968, type: 3}
+  godCapture:
+  - {fileID: 8300000, guid: c986da37271693b4282bd237c9dbd1e1, type: 3}
 --- !u!4 &1001604761
 Transform:
   m_ObjectHideFlags: 0
