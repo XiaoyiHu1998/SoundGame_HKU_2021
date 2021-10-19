@@ -2444,6 +2444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3758666571489812596, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3758666571489812597, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
       propertyPath: cage
       value: 
@@ -2472,13 +2476,21 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1001604760}
+    - target: {fileID: 3758666571489812597, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+      propertyPath: audioSourcePickupDrop
+      value: 
+      objectReference: {fileID: 1831206145}
     - target: {fileID: 3758666571489812599, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
       propertyPath: m_Name
       value: Creature (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3758666571489812596, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+--- !u!82 &1831206145 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3758666571489812596, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+  m_PrefabInstance: {fileID: 1831206144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845109957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7360982716281970884, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
