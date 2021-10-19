@@ -90,22 +90,31 @@ public class SoundManager : MonoBehaviour
         {
             case ClipType.CreatureIdle:
                 return creatureIdle[getRandomClip(ref creatureIdle, ref creatureIdleQueue)];
+
             case ClipType.CreatureWalk:
                 return creatureWalk[getRandomClip(ref creatureWalk, ref creatureWalkQueue)];
+
             case ClipType.CreatureRun:
                 return creatureRun[getRandomClip(ref creatureRun, ref creatureRunQueue)];
+
             case ClipType.CreaturePickUp:
                 return CreaturePickUp[getRandomClip(ref CreaturePickUp, ref CreaturePickUpQueue)];
+
             case ClipType.CreaturePickedUp:
                 return CreaturePickedUp[getRandomClip(ref CreaturePickedUp, ref CreaturePickedUpQueue)];
+
             case ClipType.CreatureDropped:
                 return CreatureDropped[getRandomClip(ref CreatureDropped, ref CreatureDroppedQueue)];
+
             case ClipType.CreatureCaged:
                 return CreatureCaged[getRandomClip(ref CreatureCaged, ref CreatureCagedQueue)];
+
             case ClipType.CreatureSpawn:
                 return CreatureSpawn[getRandomClip(ref CreatureSpawn, ref CreatureSpawnQueue)];
+
             case ClipType.PlayerWalk:
                 return playerWalk[getRandomClip(ref playerWalk, ref playerWalkQueue)];
+
             default:
                 return errorSound;
         }
