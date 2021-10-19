@@ -1510,6 +1510,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 80b01b3cdba4ed34d8d3571a782f2b02, type: 3}
   - {fileID: 8300000, guid: 82bd5234cf2c98045abebc127c880fc7, type: 3}
   - {fileID: 8300000, guid: 760b57668d254664e8fa6a1fda428b99, type: 3}
+  - {fileID: 8300000, guid: 3354905f0e860bd428805cd606314d53, type: 3}
   source: {fileID: 1198866293}
   soundScape: {fileID: 1061839525}
   player: {fileID: 1845109957}

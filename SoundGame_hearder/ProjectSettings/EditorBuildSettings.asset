@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: d8b75fb88d5c86445a95fe050f58c05a
+  - enabled: 1
+    path: Assets/Scenes/LEVI_MainScene.unity
+    guid: 30ad347a18836d9419d16fe573509b2b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 373dd00a61920af4eb15261186ac3ba5, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: dbcc9f95a3f810c40837a4da4cbe88e0, type: 2}

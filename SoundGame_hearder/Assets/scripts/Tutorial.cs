@@ -106,16 +106,27 @@ public class Tutorial : MonoBehaviour
                 win.Play();
                 source.clip = godTutorial[5];
                 source.Play();
+                timer = 0;
             }
         }
     }
     void Drop(){
         if(!source.isPlaying){
-            drop = false;
-            end = true;
+            timer += 1*Time.deltaTime;
+            if(timer >= 4){
+                drop = false;
+                end = true;
+                player.GetComponent<PlayerMovement>().enabled = false;
+                cam.GetComponent<MouseLook>().enabled = false;
+                soundScape.SetActive(false);
+                source.clip = godTutorial[6];
+                source.Play();
+            }
         }
     }
     void End(){
-        SceneManager.LoadScene(1);
+        if(!source.isPlaying){
+            SceneManager.LoadScene(1);
+        }
     }
 }
