@@ -168,6 +168,15 @@ public class Creature : MonoBehaviour
             doneMoving = false;
 
             moveDirection = randomDirection();
+            audioSource.Stop();
+            if(moveDirection == new Vector3(0, 0, 0))
+            {
+                PlayClip(soundManager.getAudioClip(ClipType.CreatureIdle));
+            }
+            else
+            {
+                PlayClip(soundManager.getAudioClip(ClipType.CreatureWalk));
+            }
 
             moveTime = (float)(minMoveTime + random.NextDouble() * (maxMoveTime - minMoveTime));
             moveTimer.Restart();
