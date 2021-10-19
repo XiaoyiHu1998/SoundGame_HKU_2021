@@ -100,6 +100,10 @@ public class SoundManager : MonoBehaviour
                 return CreaturePickedUp[getRandomClip(ref CreaturePickedUp, ref CreaturePickedUpQueue)];
             case ClipType.CreatureDropped:
                 return CreatureDropped[getRandomClip(ref CreatureDropped, ref CreatureDroppedQueue)];
+            case ClipType.CreatureCaged:
+                return CreatureCaged[getRandomClip(ref CreatureCaged, ref CreatureCagedQueue)];
+            case ClipType.CreatureSpawn:
+                return CreatureSpawn[getRandomClip(ref CreatureSpawn, ref CreatureSpawnQueue)];
             case ClipType.PlayerWalk:
                 return playerWalk[getRandomClip(ref playerWalk, ref playerWalkQueue)];
             default:

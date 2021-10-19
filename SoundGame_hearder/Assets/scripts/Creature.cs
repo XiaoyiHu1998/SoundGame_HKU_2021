@@ -89,7 +89,6 @@ public class Creature : MonoBehaviour
         {
             scoreManager.incrementScore(1);
             respawnTimer.Restart();
-            PlayClip(soundManager.getAudioClip(ClipType.CreatureCaged));
         }
 
         if(respawnTimer.ElapsedMilliseconds >= respawnTime && respawnTimer.IsRunning)
@@ -131,7 +130,6 @@ public class Creature : MonoBehaviour
         }
         else if (doneMoving)
         {
-            audioSource.Stop();
             UnityEngine.Debug.Log("doneMoving");
         }
     }
@@ -279,14 +277,19 @@ public class Creature : MonoBehaviour
     public void Pickup()
     {
         pickedUp = true;
-        audioSourcePickupDrop.clip = soundManager.getAudioClip(ClipType.CreaturePickUp);
-        audioSourcePickupDrop.Play();
+        PlayClip(soundManager.getAudioClip(ClipType.CreaturePickUp));
     }
 
     public void Drop()
     {
         pickedUp = false;
-        audioSourcePickupDrop.clip = soundManager.getAudioClip(ClipType.CreatureDropped);
         audioSourcePickupDrop.Play();
+        if(Vector3.Distance(gameObject.transform.position, cage.GetLocation()) <= cage.GetRespawnDistance())
+        {
+            PlayClip(soundManager.getAudioClip(ClipType.CreatureCaged));
+        }
+        {
+            PlayClip(soundManager.getAudioClip(ClipType.CreatureDropped));
+        }
     }
 }
