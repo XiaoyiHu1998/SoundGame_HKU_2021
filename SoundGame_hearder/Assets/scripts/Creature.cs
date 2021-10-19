@@ -285,7 +285,6 @@ public class Creature : MonoBehaviour
     public void Drop()
     {
         pickedUp = false;
-        audioSourcePickupDrop.Play();
         if(Vector3.Distance(gameObject.transform.position, cage.GetLocation()) <= cage.GetRespawnDistance())
         {
             cage.PlayCagedSound();
