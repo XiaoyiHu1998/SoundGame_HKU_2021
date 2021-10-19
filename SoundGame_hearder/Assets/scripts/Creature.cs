@@ -88,11 +88,11 @@ public class Creature : MonoBehaviour
         if(Vector3.Distance(cage.GetLocation(), gameObject.transform.position) <= cage.GetRespawnDistance() && !respawnTimer.IsRunning)
         {
             scoreManager.incrementScore(1);
-            respawnTimer.Start();
+            respawnTimer.Restart();
             PlayClip(soundManager.getAudioClip(ClipType.CreatureCaged));
         }
 
-        if(respawnTimer.ElapsedMilliseconds >= respawnTime)
+        if(respawnTimer.ElapsedMilliseconds >= respawnTime && respawnTimer.IsRunning)
         {
             respawnTimer.Stop();
             respawnTimer.Reset();
