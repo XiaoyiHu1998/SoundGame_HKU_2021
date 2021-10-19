@@ -2491,6 +2491,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1641133312}
     - target: {fileID: 3758666571489812597, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
+      propertyPath: respawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758666571489812597, guid: c4cef97cae8477040b2fa8f3d5c07167, type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 2110738354}

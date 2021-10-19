@@ -53,6 +53,8 @@ public class Creature : MonoBehaviour
     void Start()
     {
         respawnTimer = new Stopwatch();
+        respawnTimer.Stop();
+        respawnTimer.Reset();
         moveTimer = new Stopwatch();
         moveTimer.Start();
         divineEffectTimer = new Stopwatch();
