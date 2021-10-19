@@ -39,6 +39,6 @@ public class Cage : MonoBehaviour
     public void PlayCagedSound()
     {
         audioSourceCaged.clip = soundManager.getAudioClip(ClipType.CreatureCaged);
-        audioSource.Play();
+        audioSourceCaged.Play();
     }
 }
