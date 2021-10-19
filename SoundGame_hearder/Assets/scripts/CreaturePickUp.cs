@@ -6,7 +6,7 @@ public class CreaturePickUp : MonoBehaviour
 {
     public Camera mainCamera;
     public SoundManager soundManager;
-    bool carrying;
+    public bool carrying;
 
     GameObject carriedObject;
 
@@ -38,7 +38,7 @@ public class CreaturePickUp : MonoBehaviour
 
             Ray ray = mainCamera.ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 2)){
+            if(Physics.Raycast(ray, out hit, 4)){
                 Debug.DrawRay(ray.origin, hit.point, Color.red);
                 PickUpAble p = hit.collider.GetComponent<PickUpAble>();
                 if(p != null){
