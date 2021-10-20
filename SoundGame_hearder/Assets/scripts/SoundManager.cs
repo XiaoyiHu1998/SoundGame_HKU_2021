@@ -27,6 +27,7 @@ public class SoundManager : MonoBehaviour
 {
     public AudioClip errorSound;
     public GodSource godSource;
+    public bool tutorial;
 
     //audio clips
     public List<AudioClip> creatureWalk;
@@ -79,6 +80,15 @@ public class SoundManager : MonoBehaviour
         godCaptureQueue  = new Queue<int>();
 
         random = new System.Random();
+
+        if (tutorial)
+        {
+            godSource.setAllowedList(new List<AudioClip>());
+        }
+        else
+        {
+            godSource.allowAll();
+        }
     }
 
     // Update is called once per frame
