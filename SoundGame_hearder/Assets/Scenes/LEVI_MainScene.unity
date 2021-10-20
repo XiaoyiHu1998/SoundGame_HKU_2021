@@ -1537,7 +1537,7 @@ MonoBehaviour:
   playerWalk:
   - {fileID: 8300000, guid: 352c4853863006f40839357c2a1071c3, type: 3}
   playerIdle:
-  - {fileID: 8300000, guid: 494bd1721199a40c5a79fa3011793556, type: 3}
+  - {fileID: 8300000, guid: a275182ffa3b45743b52ab9d15731101, type: 3}
   godIdle:
   - {fileID: 8300000, guid: 5ac6fe579e904064b92a0c15d2cc1222, type: 3}
   godDrown:
