@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum GodLine
 {
-    GodIdle,
+    PlayerIdle,
     GodDrown,
     GodCapture
 }
@@ -50,11 +50,11 @@ public class SoundManager : MonoBehaviour
     private Queue<int> playerWalkQueue;
 
     //god voicelines
-    public List<AudioClip> godIdle;
+    public List<AudioClip> playerIdle;
     public List<AudioClip> godDrown;
     public List<AudioClip> godCapture;
 
-    private Queue<int> godIdleQueue;
+    private Queue<int> playerIdleQueue;
     private Queue<int> godDrownQueue;
     private Queue<int> godCaptureQueue;
 
@@ -71,7 +71,7 @@ public class SoundManager : MonoBehaviour
         CreatureCagedQueue   = new Queue<int>();
         CreatureSpawnQueue   = new Queue<int>();
 
-        godIdleQueue     = new Queue<int>();
+        playerIdleQueue     = new Queue<int>();
         godDrownQueue    = new Queue<int>();
         godCaptureQueue  = new Queue<int>();
 
@@ -124,8 +124,8 @@ public class SoundManager : MonoBehaviour
     {
         switch (godLine)
         {
-            case GodLine.GodIdle:
-                godSource.PlayLine(godIdle[getRandomClip(ref godIdle, ref godIdleQueue)]);
+            case GodLine.PlayerIdle:
+                godSource.PlayLine(playerIdle[getRandomClip(ref playerIdle, ref playerIdleQueue)]);
                 break;
             case GodLine.GodDrown:
                 godSource.PlayLine(godDrown[getRandomClip(ref godDrown, ref godDrownQueue)]);
