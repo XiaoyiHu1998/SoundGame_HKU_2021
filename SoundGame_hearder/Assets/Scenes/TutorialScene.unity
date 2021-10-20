@@ -1433,9 +1433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fa7ea875dde684fa1cf7d528ed26a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxQueueLength: 0
   errorSound: {fileID: 8300000, guid: b85ee0ef0d24a134ab5bd9381b96294b, type: 3}
   godSource: {fileID: 1655404496}
-  tutorial: 1
   creatureWalk:
   - {fileID: 8300000, guid: 968f2525709629e4badae802569f64f0, type: 3}
   - {fileID: 8300000, guid: aa3a411714c81f545935448541082016, type: 3}
@@ -1464,7 +1464,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e944dc4b4ba6e3b4da354a59dd397eac, type: 3}
   playerWalk:
   - {fileID: 8300000, guid: 352c4853863006f40839357c2a1071c3, type: 3}
-  playerIdle: []
+  playerIdle:
+  - {fileID: 8300000, guid: a275182ffa3b45743b52ab9d15731101, type: 3}
   godIdle:
   - {fileID: 8300000, guid: 0eeb62c206491624a9b20feb5bb757f5, type: 3}
   godDrown:
