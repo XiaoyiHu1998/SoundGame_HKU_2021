@@ -8,7 +8,7 @@ public enum GodLine
     PlayerIdle,
     GodIdle,
     GodDrown,
-    GodCapture
+    GodCapture,
 }
 public enum ClipType
 {
@@ -124,21 +124,21 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void playGodLine(GodLine godLine)
+    public void playGodLine(GodLine godLine, bool overrideCurrentLine = false)
     {
         switch (godLine)
         {
             case GodLine.PlayerIdle:
-                godSource.PlayLine(playerIdle[getRandomClip(ref playerIdle, ref playerIdleQueue)]);
+                godSource.PlayLine(playerIdle[getRandomClip(ref playerIdle, ref playerIdleQueue)], overrideCurrentLine);
                 break;
             case GodLine.GodIdle:
-                godSource.PlayLine(godIdle[getRandomClip(ref godIdle, ref godIdleQueue)]);
+                godSource.PlayLine(godIdle[getRandomClip(ref godIdle, ref godIdleQueue)], overrideCurrentLine);
                 break;
             case GodLine.GodDrown:
-                godSource.PlayLine(godDrown[getRandomClip(ref godDrown, ref godDrownQueue)]);
+                godSource.PlayLine(godDrown[getRandomClip(ref godDrown, ref godDrownQueue)], overrideCurrentLine);
                 break;
             case GodLine.GodCapture:
-                godSource.PlayLine(godCapture[getRandomClip(ref godCapture, ref godCaptureQueue)]);
+                godSource.PlayLine(godCapture[getRandomClip(ref godCapture, ref godCaptureQueue)], overrideCurrentLine);
                 break;
         }
     }

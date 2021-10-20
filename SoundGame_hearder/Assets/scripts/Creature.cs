@@ -288,6 +288,7 @@ public class Creature : MonoBehaviour
         if(Vector3.Distance(gameObject.transform.position, cage.GetLocation()) <= cage.GetRespawnDistance())
         {
             cage.PlayCagedSound();
+            soundManager.playGodLine(GodLine.GodCapture, true);
         }
         {
             PlayClip(soundManager.getAudioClip(ClipType.CreatureDropped));

@@ -17,9 +17,9 @@ public class GodSource : MonoBehaviour
         
     }
 
-    public void PlayLine(AudioClip audioClip)
+    public void PlayLine(AudioClip audioClip, bool overrideCurrentLine)
     {
-        if (audioSource.isPlaying)
+        if (audioSource.isPlaying && !overrideCurrentLine)
             return;
         audioSource.clip = audioClip;
         audioSource.Play();
