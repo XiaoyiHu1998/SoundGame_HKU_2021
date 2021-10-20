@@ -1433,9 +1433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fa7ea875dde684fa1cf7d528ed26a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxQueueLength: 0
   errorSound: {fileID: 8300000, guid: b85ee0ef0d24a134ab5bd9381b96294b, type: 3}
   godSource: {fileID: 1655404496}
+  tutorial: 1
   creatureWalk:
   - {fileID: 8300000, guid: 968f2525709629e4badae802569f64f0, type: 3}
   - {fileID: 8300000, guid: aa3a411714c81f545935448541082016, type: 3}
