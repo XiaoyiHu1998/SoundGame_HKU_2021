@@ -7,6 +7,7 @@ public class CreaturePickUp : MonoBehaviour
     public Camera mainCamera;
     public SoundManager soundManager;
     public bool carrying;
+    private PickUpAble target;
 
     GameObject carriedObject;
 
@@ -22,6 +23,7 @@ public class CreaturePickUp : MonoBehaviour
         }else{
             Pickup();
         }
+        target = FindObjectOfType<PickupHitbox>().target;
     }
 
     void Carry(GameObject o){
@@ -32,6 +34,7 @@ public class CreaturePickUp : MonoBehaviour
     }
 
     void Pickup(){
+        /*
         if(Input.GetMouseButtonDown(0)){
             int x = Screen.width / 2;
             int y = Screen.height/2;
@@ -50,7 +53,20 @@ public class CreaturePickUp : MonoBehaviour
                 }
             }
         }
+        */
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (target != null)
+            {
+                carrying = true;
+                carriedObject = target.gameObject;
+                Creature pickedUpCreature = carriedObject.GetComponent<Creature>();
+                pickedUpCreature.Pickup();
+                pickedUpCreature.PlayClip(soundManager.getAudioClip(ClipType.CreaturePickedUp), 0.5f);
+            }
+        }
     }
+
     void CheckDrop(){
         if(Input.GetMouseButtonUp(0)){
             DropObject();
@@ -64,6 +80,8 @@ public class CreaturePickUp : MonoBehaviour
         carrying = false;
         playSound();
     }
+
+    
 
     void playSound(){
         carriedObject.GetComponent<Creature>().Drop();

@@ -1513,7 +1513,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2bca21da69665b4439e0f91a466f05e9, type: 3}
   - {fileID: 8300000, guid: e71ace86873efc64dba25a6b407cc424, type: 3}
   - {fileID: 8300000, guid: e3e54eff962080b449f7dfd239a069e3, type: 3}
-  source: {fileID: 1198866293}
+  source: {fileID: 1001604763}
   soundScape: {fileID: 1061839525}
   player: {fileID: 1845109957}
   cam: {fileID: 1095406241}
@@ -2071,11 +2071,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1198866293 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6819494187444794466, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
-  m_PrefabInstance: {fileID: 1655404495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1215707646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,6 +3295,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 677866895355275061, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819494187444794466, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819494187444794466, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7360982715834971779, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
