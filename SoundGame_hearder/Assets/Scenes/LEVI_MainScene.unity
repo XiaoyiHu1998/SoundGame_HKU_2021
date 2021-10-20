@@ -973,6 +973,27 @@ Transform:
   m_Father: {fileID: 1061839526}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &514749428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1144012225845612671, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
+  m_PrefabInstance: {fileID: 1655404495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &514749434
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514749428}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &688324756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1508,6 +1529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   errorSound: {fileID: 8300000, guid: b85ee0ef0d24a134ab5bd9381b96294b, type: 3}
   godSource: {fileID: 1655404496}
+  tutorial: 0
   creatureWalk:
   - {fileID: 8300000, guid: 968f2525709629e4badae802569f64f0, type: 3}
   - {fileID: 8300000, guid: aa3a411714c81f545935448541082016, type: 3}
@@ -3056,6 +3078,14 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1001604760}
+    - target: {fileID: 1515608510859761950, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600848877145312308, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7360982715834971779, guid: 289bb48042f81c940a32f32fc2b380db, type: 3}
       propertyPath: mouseSensitivity
       value: 2
