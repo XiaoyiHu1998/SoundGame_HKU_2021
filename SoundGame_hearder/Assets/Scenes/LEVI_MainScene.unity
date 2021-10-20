@@ -1539,6 +1539,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 352c4853863006f40839357c2a1071c3, type: 3}
   playerIdle:
   - {fileID: 8300000, guid: 494bd1721199a40c5a79fa3011793556, type: 3}
+  godIdle:
+  - {fileID: 8300000, guid: 5ac6fe579e904064b92a0c15d2cc1222, type: 3}
   godDrown:
   - {fileID: 8300000, guid: 04a1765d2820c0d4da18097425639968, type: 3}
   godCapture:
@@ -3663,6 +3665,8 @@ MonoBehaviour:
   creatureRunDistance: 2.5
   soundManager: {fileID: 1001604760}
   audioSource: {fileID: 1845109958}
+  godIdleTimeMin: 15
+  godIdleTimeMax: 40
 --- !u!1 &1915329602
 GameObject:
   m_ObjectHideFlags: 0
