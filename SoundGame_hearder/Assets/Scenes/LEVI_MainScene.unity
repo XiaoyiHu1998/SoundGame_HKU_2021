@@ -778,7 +778,7 @@ RectTransform:
   m_GameObject: {fileID: 414831093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1182, y: 1.1182, z: 1.1182}
   m_Children: []
   m_Father: {fileID: 260763541}
   m_RootOrder: 0
@@ -1139,13 +1139,31 @@ MonoBehaviour:
   playerWalk:
   - {fileID: 8300000, guid: 352c4853863006f40839357c2a1071c3, type: 3}
   playerIdle:
-  - {fileID: 8300000, guid: a275182ffa3b45743b52ab9d15731101, type: 3}
+  - {fileID: 8300000, guid: 8e448694e7308cf409d673a5e4f87787, type: 3}
+  - {fileID: 8300000, guid: 28d4cbf178c68af4585c67749e37a553, type: 3}
+  - {fileID: 8300000, guid: 1d37c9e1551727d479de50a12e68030c, type: 3}
+  - {fileID: 8300000, guid: 5dfb605191bec0441b5e7b0d92841470, type: 3}
+  - {fileID: 8300000, guid: 263aa223add963947acef5a844a7db6b, type: 3}
+  - {fileID: 8300000, guid: 0dd8679fc2e33854a8148223fcc99f28, type: 3}
   godIdle:
-  - {fileID: 8300000, guid: 5ac6fe579e904064b92a0c15d2cc1222, type: 3}
+  - {fileID: 8300000, guid: 8cd3574d1fe1f964bbf80456f36b9775, type: 3}
+  - {fileID: 8300000, guid: e6402e963c010504c9e622cb1b3ff03d, type: 3}
+  - {fileID: 8300000, guid: 2000edd422f410946af1c163e29b54c3, type: 3}
+  - {fileID: 8300000, guid: 8abdc25ee77d2b14a871a0e1ccd5388c, type: 3}
+  - {fileID: 8300000, guid: 454e00e6fbd86e448925a89dd58501fe, type: 3}
+  - {fileID: 8300000, guid: 7b0a087ce71639948a57c5e4b5bf95f6, type: 3}
   godDrown:
   - {fileID: 8300000, guid: 04a1765d2820c0d4da18097425639968, type: 3}
   godCapture:
-  - {fileID: 8300000, guid: c986da37271693b4282bd237c9dbd1e1, type: 3}
+  - {fileID: 8300000, guid: f228e5b57f8c27548b09a22b5c2b2ce1, type: 3}
+  - {fileID: 8300000, guid: 688308f0c63913c478a923f0dcff4d3f, type: 3}
+  - {fileID: 8300000, guid: c3669aa8b86f05c4c93e0d1faad41dcc, type: 3}
+  - {fileID: 8300000, guid: 4219b60c7ee456646a54742e8ac34657, type: 3}
+  - {fileID: 8300000, guid: 92046bc60bc6d854b90892f2cf8734c9, type: 3}
+  - {fileID: 8300000, guid: cf6dd72942e7fae4f82c022df682f043, type: 3}
+  - {fileID: 8300000, guid: c05828ec42f62654f87f483d23a247b9, type: 3}
+  - {fileID: 8300000, guid: 4d71c3f8ebb279d40aa092735251eb8c, type: 3}
+  - {fileID: 8300000, guid: 557a69a95a8629143a378c50a270558a, type: 3}
 --- !u!4 &1001604761
 Transform:
   m_ObjectHideFlags: 0
@@ -1368,9 +1386,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 2.5869431
-  MaxDistance: 40
+  MaxDistance: 70
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1378,10 +1396,19 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.03695633
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.47441798
+      value: 0.38884783
+      inSlope: -1.0383744
+      outSlope: -1.0383744
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -1389,12 +1416,12 @@ AudioSource:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.0383745
+      outSlope: -1.0383745
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -2119,7 +2146,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.198
+  m_Volume: 0.531
   m_Pitch: 1
   Loop: 0
   Mute: 0
