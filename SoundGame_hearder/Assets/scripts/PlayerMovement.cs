@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
             IdleTimer.Start();
         }
 
-        if(IdleTimer.ElapsedMilliseconds >= IdleTime)
+        if(IdleTimer.ElapsedMilliseconds / 1000 >= IdleTime)
         {
             if (wasWalking)
             {
