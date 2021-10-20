@@ -25,7 +25,6 @@ public enum ClipType
 
 public class SoundManager : MonoBehaviour
 {
-    public int maxQueueLength;
     public AudioClip errorSound;
     public GodSource godSource;
 
@@ -155,9 +154,16 @@ public class SoundManager : MonoBehaviour
 
         //add index to queue and make sure only last maxQueueLength indices are remembered
         queue.Enqueue(index);
-        while (queue.Count > maxQueueLength)
+        if(queue.Count == list.Count)
         {
-            queue.Dequeue();
+            int maxQueueLength = list.Count / 2;
+            if (list.Count == 1)
+                maxQueueLength = 0;
+
+            while (queue.Count > maxQueueLength)
+            {
+                queue.Dequeue();
+            }
         }
 
         return index;
