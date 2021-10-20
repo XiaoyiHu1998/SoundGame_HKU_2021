@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if(x != 0.0f && z != 0.0f && !wasWalking)
+        if(x != 0.0f || z != 0.0f && !wasWalking)
         {
             wasWalking = true;
             audioSource.clip = soundManager.getAudioClip(ClipType.PlayerWalk);
