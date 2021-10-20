@@ -1506,7 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fa7ea875dde684fa1cf7d528ed26a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxQueueLength: 0
   errorSound: {fileID: 8300000, guid: b85ee0ef0d24a134ab5bd9381b96294b, type: 3}
   godSource: {fileID: 1655404496}
   creatureWalk:
@@ -1528,7 +1527,7 @@ MonoBehaviour:
   CreaturePickUp:
   - {fileID: 8300000, guid: ad994859ede7c544aaca9737ba8187e4, type: 3}
   CreaturePickedUp:
-  - {fileID: 8300000, guid: 3a4baf251c1814716b9458d036384a76, type: 3}
+  - {fileID: 8300000, guid: ad994859ede7c544aaca9737ba8187e4, type: 3}
   CreatureDropped:
   - {fileID: 8300000, guid: 6878ef89128a92a438c8067e9abde61d, type: 3}
   CreatureCaged:
