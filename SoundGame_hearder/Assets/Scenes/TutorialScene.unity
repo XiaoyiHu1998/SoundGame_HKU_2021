@@ -1504,13 +1504,13 @@ MonoBehaviour:
   drop: 0
   end: 0
   godTutorial:
-  - {fileID: 8300000, guid: 64695f7457854f745ad9aac04e623cf6, type: 3}
-  - {fileID: 8300000, guid: 5e0bd3b37d7824d4aa56bed3180481cc, type: 3}
-  - {fileID: 8300000, guid: 9d54df4363a2b3045a333ad74eaa0855, type: 3}
-  - {fileID: 8300000, guid: 80b01b3cdba4ed34d8d3571a782f2b02, type: 3}
-  - {fileID: 8300000, guid: 82bd5234cf2c98045abebc127c880fc7, type: 3}
-  - {fileID: 8300000, guid: 760b57668d254664e8fa6a1fda428b99, type: 3}
-  - {fileID: 8300000, guid: 3354905f0e860bd428805cd606314d53, type: 3}
+  - {fileID: 8300000, guid: 887c1b0ada48fab4b9934c5cd7c4888c, type: 3}
+  - {fileID: 8300000, guid: 10c43e32d947e5a4f92dcee8e54cc896, type: 3}
+  - {fileID: 8300000, guid: bd0fb6acfaab1b742949a03584fdffa6, type: 3}
+  - {fileID: 8300000, guid: cfc7055964c219945b952b42f43639f2, type: 3}
+  - {fileID: 8300000, guid: 2bca21da69665b4439e0f91a466f05e9, type: 3}
+  - {fileID: 8300000, guid: e71ace86873efc64dba25a6b407cc424, type: 3}
+  - {fileID: 8300000, guid: e3e54eff962080b449f7dfd239a069e3, type: 3}
   source: {fileID: 1198866293}
   soundScape: {fileID: 1061839525}
   player: {fileID: 1845109957}
